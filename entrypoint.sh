@@ -1,13 +1,3 @@
 #!/bin/sh -l
+cloudflared tunnel --no-autoupdate run --token $CF_TOKEN
 
-echo "::set-output name=hello"
-echo "::set-output timeout=$TIMEOUT"
-echo "::set-output fc_token=$FC_TOKEN"
-# ./cloudflared --no-autoupdate run --token $1 && sleep $2
-cloudflared --no-autoupdate version
-cloudflared --no-autoupdate run --token ${FC_TOKEN}
-sleep ${TIMEOUT}
-
-# time=$(date)
-# echo "::set-output name=time::$time"
-# echo 123 && echo "abc"
