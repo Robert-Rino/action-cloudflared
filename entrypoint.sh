@@ -1,8 +1,9 @@
 #!/bin/sh -l
 
 echo "::set-output name=hello"
+echo "::set-output timeout=$TIMEOUT"
 # ./cloudflared --no-autoupdate run --token $1 && sleep $2
-./cloudflared version && echo "::set-output name=qqq:bbb"
+cloudflared version && echo "::set-output name=qqq:bbb"
 
 # time=$(date)
 # echo "::set-output name=time::$time"
