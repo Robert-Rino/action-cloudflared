@@ -15,6 +15,7 @@
 # Build container
 ARG GOVERSION=1.18.3
 ARG ALPINEVERSION=3.16
+ARG BUILDPLATFORM=linux/amd64
 
 FROM --platform=${BUILDPLATFORM} \
     golang:$GOVERSION-alpine${ALPINEVERSION} AS build
@@ -32,7 +33,7 @@ ARG TARGETARCH
 RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} make cloudflared
 
 # Runtime container
-FROM alpine:3.16.0
+FROM alpine:${ALPINEVERSION}
 
 WORKDIR /
 
