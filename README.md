@@ -15,7 +15,9 @@ This action activate cloudflare tunnel with.
 
 ## Example usage
 
+```yaml
 uses: Robert-Rino/action-cloudflared@v1
 with:
   cf_token: 'TOKEN'
   timeout: 180
+```
