@@ -11,5 +11,5 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          cf_token: 'QQQQQQ'
+          fc_token: 'QQQQQQ'
           timeout: 10
