@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    name: Debug
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Debug
+        uses: ./ # Uses an action in the root directory
+        id: hello
+        with:
+          cf_token: 'Mona the Octocat'
+          timeout: 10
