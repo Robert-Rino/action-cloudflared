@@ -1,0 +1,17 @@
+name: 'Cloudflare tunnel'
+description: 'run cloudflare tunnel with token'
+inputs:
+  fc_token:  # id of input
+    description: 'Cloudflared tunnel token'
+    required: true
+  timeout:
+    description: workflow timeout
+    required: false
+    default: 30
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.fc_token}}
+    - ${{ inputs.timeout }}
