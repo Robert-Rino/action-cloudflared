@@ -15,7 +15,9 @@ This action activate cloudflare tunnel with.
 
 ## Example usage
 
+```yaml
 uses: Robert-Rino/action-cloudflared@v1
 with:
   TUNNEL_TOKEN: 'TOKEN'
   TUNNEL_URL: http://localhost:8000
+```
