@@ -27,6 +27,5 @@ ENV TUNNEL_ORIGIN_CERT=/etc/cloudflared/cert.pem
 
 COPY --from=build /src/cloudflared /bin
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY entrypoint.sh .
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["cloudflared", "tunnel", "run"]
