@@ -1,16 +1,16 @@
 name: 'Cloudflare tunnel'
 description: 'run cloudflare tunnel with token'
 inputs:
-  CF_TOKEN:  # id of input
+  TUNNEL_TOKEN:  # id of input
     description: 'Cloudflared tunnel token'
     required: true
-  TIMEOUT:
-    description: workflow timeout
+  TUNNEL_URL:
+    description: local webservice url
     required: false
-    default: 30
+    default: http://localhost:8000
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    CF_TOKEN: ${{ inputs.CF_TOKEN}}
-    TIMEOUT: ${{ inputs.TIMEOUT }}
+    TUNNEL_TOKEN: ${{ inputs.TUNNEL_TOKEN}}
+    TUNNEL_URL: ${{ inputs.TUNNEL_URL }}

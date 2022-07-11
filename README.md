@@ -4,18 +4,18 @@ This action activate cloudflare tunnel with.
 
 ## Inputs
 
-## `fc_token`
+## `TUNNEL_TOKEN`
 
 **Required** Cloudflare tunnel token.
 
-## `timeout`
+## `TUNNEL_URL`
 
-(Optional) seconds action will wait after Cloudflare tunnel enabled.
+(Optional) local webserver url, default: http://localhost:8000.
 
 
 ## Example usage
 
 uses: Robert-Rino/action-cloudflared@v1
 with:
-  cf_token: 'TOKEN'
-  timeout: 180
+  TUNNEL_TOKEN: 'TOKEN'
+  TUNNEL_URL: http://localhost:8000
